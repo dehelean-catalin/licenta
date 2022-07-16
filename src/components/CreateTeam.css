@@ -1,0 +1,87 @@
+form {
+	width: 40%;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	color: black;
+	padding: 30px;
+	font-size: 16px;
+	border-radius: 4px;
+}
+label {
+	display: flex;
+	flex-direction: column;
+	margin: 10px 0px;
+}
+input {
+	font-size: 14px;
+	padding: 8px 14px;
+	border: 0px;
+	background-color: #f0f0f0;
+	border-bottom: 2px solid transparent;
+	margin: 6px 0px;
+	border-radius: 4px;
+	transition: 0.3s all;
+}
+input:focus {
+	outline: 0;
+	border-bottom: 2px solid black;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+textarea {
+	font-size: 14px;
+	padding: 8px 14px;
+	border: 0px;
+	background-color: #f0f0f0;
+	border-bottom: 2px solid transparent;
+	margin: 6px 0px;
+	border-radius: 4px;
+	transition: 0.3s all;
+	resize: none;
+}
+select {
+	font-size: 14px;
+	padding: 8px 14px;
+	border: 0px;
+	background-color: #f0f0f0;
+	border-bottom: 2px solid transparent;
+	margin: 6px 0px;
+	border-radius: 4px;
+	transition: 0.3s all;
+}
+select:hover {
+	cursor: pointer;
+}
+textarea:focus {
+	outline: 0;
+	border-bottom: 2px solid black;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+.btns {
+	display: flex;
+	justify-content: end;
+	margin-top: 10px;
+}
+.close-btn {
+	width: 100px;
+	background-color: transparent;
+	padding: 8px 20px;
+	border: 0px;
+	border: 1px solid #bfbfbf;
+	border-radius: 4px;
+	margin-right: 20px;
+	box-shadow: 0 3px 3px -2px #bfbfbf;
+}
+.close-btn:hover {
+	cursor: pointer;
+	background-color: #f0f0f0;
+}
+.create-btn {
+	width: 100px;
+	padding: 8px 20px;
+	border: 0px;
+	border-radius: 4px;
+}
