@@ -1,37 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TeamsItem.css";
 import { BsThreeDots } from "react-icons/bs";
-import Axios from "axios";
+import Logo from "../images/logo.png";
+import TeamsItemOptions from "./TeamsItemOptions";
 const TeamsItem = ({ team }) => {
-	const { id, mentorId, name, status, privacy, description, key } = team;
+	const [isOptionOpened, setIsOptionOpened] = useState(false);
 
-	const handleStatus = () => {
-		let newStatus = "";
-		if (status === "active") {
-			newStatus = "hidden";
-		}
-		if (status === "hidden") {
-			newStatus = "active";
-		}
-		Axios.put(`https://licenta-986d3-default-rtdb.europe-west1.firebasedatabase.app/teams/${key}.json`, {
-			id,
-			mentorId,
-			name,
-			status: newStatus,
-			privacy,
-			description,
-		})
-			.then((response) => {
-				console.log(response);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	};
 	return (
 		<div className="teams-item">
-			<BsThreeDots onClick={handleStatus} />
+			<div className="teams-item-dots">
+				<BsThreeDots onClick={() => setIsOptionOpened(!isOptionOpened)} />
+			</div>
+
+			<img src={Logo} alt="not found" className="join-icon" />
 			<h3>{team.name}</h3>
+			<div>
+				Role: <span>Owner</span>
+			</div>
+			{isOptionOpened && <TeamsItemOptions team={team} setIsOptionOpened={(open) => setIsOptionOpened(open)} />}
 		</div>
 	);
 };

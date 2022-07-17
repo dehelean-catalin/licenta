@@ -11,3 +11,11 @@
 	flex-direction: row;
 	background-color: #0d1117;
 }
+.join-icon {
+	width: 50px;
+	height: 50px;
+	border-radius: 4px;
+	padding: 10px;
+	background-color: white;
+	margin-bottom: 10px;
+}

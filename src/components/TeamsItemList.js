@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./TeamsItemList.css";
 import TeamsItem from "./TeamsItem";
-const TeamsItemList = ({ teams, teamsStatus }) => {
+import TeamsContext from "../store/teams-context";
+const TeamsItemList = () => {
+	const { teams } = useContext(TeamsContext);
 	return (
-		<div>
-			{teams
-				.filter((team) => team.status == teamsStatus)
-				.map((team, key) => (
-					<TeamsItem key={key} team={team} />
-				))}
+		<div className="teams-list">
+			{teams.map((team, key) => (
+				<TeamsItem key={key} team={team} />
+			))}
 		</div>
 	);
 };

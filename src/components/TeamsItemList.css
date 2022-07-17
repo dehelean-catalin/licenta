@@ -1,11 +1,6 @@
-.teams-item {
-	width: 250px;
-	height: 200px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-radius: 2px;
-	border: 2px solid #30363d;
-	margin: 10px;
+.teams-list {
+	display: inline-grid;
+	gap: 10px;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: repeat(30, auto);
 }

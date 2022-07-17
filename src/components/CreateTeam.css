@@ -1,51 +1,100 @@
-form {
+.create-team-form {
 	width: 40%;
 	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	display: flex;
 	flex-direction: column;
-	background-color: white;
-	color: black;
+
+	background-color: #1b2026;
+	color: white;
 	padding: 30px;
-	font-size: 16px;
+	font-size: 14px;
 	border-radius: 4px;
+	box-shadow: 0px 10px 10px -2px black;
+}
+.form-title {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+.form-info {
+	margin-bottom: 20px;
 }
 label {
 	display: flex;
 	flex-direction: column;
-	margin: 10px 0px;
+	margin: 8px 0px;
+	position: relative;
 }
-input {
+.valid-input-name {
 	font-size: 14px;
 	padding: 8px 14px;
 	border: 0px;
-	background-color: #f0f0f0;
+	background-color: #30363d;
+	color: white;
 	border-bottom: 2px solid transparent;
 	margin: 6px 0px;
 	border-radius: 4px;
 	transition: 0.3s all;
 }
-input:focus {
+.valid-input-name:focus {
 	outline: 0;
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid #38c669;
 	border-bottom-right-radius: 0px;
 	border-bottom-left-radius: 0px;
+}
+.invalid-input-name {
+	font-size: 14px;
+	padding: 8px 14px;
+	border: 0px;
+	background-color: #30363d;
+	color: rgb(255, 97, 97);
+	border-bottom: 2px solid rgb(255, 97, 97);
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	margin: 6px 0px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	outline: 0;
+}
+.name-length {
+	position: absolute;
+	top: 33.5px;
+	right: 14px;
+	color: #6d6d6d;
+}
+.name-length-limit {
+	position: absolute;
+	top: 34px;
+	right: 14px;
+	color: rgb(255, 97, 97);
 }
 textarea {
 	font-size: 14px;
 	padding: 8px 14px;
 	border: 0px;
-	background-color: #f0f0f0;
+	background-color: #30363d;
+	color: white;
 	border-bottom: 2px solid transparent;
 	margin: 6px 0px;
 	border-radius: 4px;
 	transition: 0.3s all;
 	resize: none;
 }
+textarea:focus {
+	outline: 0;
+	border-bottom: 2px solid #38c669;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
 select {
 	font-size: 14px;
 	padding: 8px 14px;
 	border: 0px;
-	background-color: #f0f0f0;
+	background-color: #30363d;
+	color: white;
 	border-bottom: 2px solid transparent;
 	margin: 6px 0px;
 	border-radius: 4px;
@@ -54,34 +103,54 @@ select {
 select:hover {
 	cursor: pointer;
 }
-textarea:focus {
-	outline: 0;
-	border-bottom: 2px solid black;
-	border-bottom-right-radius: 0px;
-	border-bottom-left-radius: 0px;
-}
+
 .btns {
 	display: flex;
 	justify-content: end;
-	margin-top: 10px;
+	margin-top: 15px;
 }
 .close-btn {
 	width: 100px;
 	background-color: transparent;
-	padding: 8px 20px;
-	border: 0px;
-	border: 1px solid #bfbfbf;
-	border-radius: 4px;
+	color: white;
+	padding: 6px 16px;
+	font-size: 16px;
+	font-weight: 600;
 	margin-right: 20px;
-	box-shadow: 0 3px 3px -2px #bfbfbf;
+	border: 0px;
+	border: 2px solid #30363d;
+	border-radius: 20px;
 }
 .close-btn:hover {
 	cursor: pointer;
-	background-color: #f0f0f0;
+	background-color: #30363d;
 }
+
 .create-btn {
 	width: 100px;
-	padding: 8px 20px;
+	padding: 6px;
 	border: 0px;
-	border-radius: 4px;
+	border-radius: 20px;
+	background-color: #38c669;
+	color: white;
+	font-weight: 600;
+	font-size: 16px;
+}
+.create-btn:hover {
+	cursor: pointer;
+	background-color: #2fa559;
+}
+.create-btn:disabled {
+	width: 100px;
+	background-color: #30363d;
+	color: #6d6d6d;
+	font-weight: 600;
+	padding: 6px;
+	border: 0px;
+	border-radius: 20px;
+}
+.create-btn:disabled:hover {
+	background-color: #30363d;
+	color: #6d6d6d;
+	cursor: auto;
 }

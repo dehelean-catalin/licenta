@@ -1,29 +1,16 @@
-import React, { useEffect, useState } from "react";
-import Axios from "axios";
+import React, { useEffect, useContext } from "react";
 import { IoSettingsOutline } from "react-icons/io5";
+import { BiSearch } from "react-icons/bi";
 import "./Teams.css";
 import TeamsItemList from "../components/TeamsItemList";
+import TeamsContext from "../store/teams-context";
 
 const Teams = () => {
-	const [teams, setTeams] = useState([]);
-	const [teamsStatus, setTeamsStatus] = useState("active");
+	const { status, handleStatus } = useContext(TeamsContext);
 	useEffect(() => {
-		Axios.get("https://licenta-986d3-default-rtdb.europe-west1.firebasedatabase.app/teams.json").then((response) => {
-			let loadedData = [];
-			for (const key in response.data) {
-				loadedData.push({
-					key: key,
-					id: response.data[key].id,
-					mentorId: response.data[key].mentorId,
-					name: response.data[key].name,
-					status: response.data[key].status,
-					privacy: response.data[key].privacy,
-					description: response.data[key].description,
-				});
-			}
-			setTeams(loadedData);
-		});
+		handleStatus("active");
 	}, []);
+
 	return (
 		<div className="teams">
 			<div className="teams-container">
@@ -32,16 +19,28 @@ const Teams = () => {
 						Teams
 						<IoSettingsOutline />
 					</div>
-					<div className="teams-nav">
-						<h3 className="teams-li" onClick={() => setTeamsStatus("active")}>
-							Your teams
-						</h3>
-						<h3 className="teams-li" onClick={() => setTeamsStatus("hidden")}>
-							Hidden teams
-						</h3>
+					<div className="teams-header-wrapper">
+						<ul className="teams-nav">
+							<li
+								className={status === "active" ? "teams-li-active" : "teams-li-inactive"}
+								onClick={() => handleStatus("active")}
+							>
+								Your teams
+							</li>
+							<li
+								className={status === "hidden" ? "teams-li-active" : "teams-li-inactive"}
+								onClick={() => handleStatus("hidden")}
+							>
+								Hidden teams
+							</li>
+						</ul>
+						<div className="search-wrapper">
+							<input className="teams-search-bar" type="text" placeholder="Search Teams" />
+							<BiSearch className="search-icon" />
+						</div>
 					</div>
 				</header>
-				<TeamsItemList teams={teams} teamsStatus={teamsStatus} />
+				<TeamsItemList />
 			</div>
 		</div>
 	);
