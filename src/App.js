@@ -6,7 +6,7 @@ import Activity from "./pages/Activity";
 import Join from "./pages/Join";
 import "./App.css";
 import Team from "./pages/Team";
-
+import React from "react";
 function App() {
 	return (
 		<div className="App">

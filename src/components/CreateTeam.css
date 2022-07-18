@@ -10,12 +10,12 @@
 	background-color: #1b2026;
 	color: white;
 	padding: 30px;
-	font-size: 14px;
+	font-size: 16px;
 	border-radius: 4px;
 	box-shadow: 0px 10px 10px -2px black;
 }
 .form-title {
-	font-size: 18px;
+	font-size: 22px;
 	font-weight: 600;
 	margin-bottom: 10px;
 }
@@ -29,7 +29,6 @@ label {
 	position: relative;
 }
 .valid-input-name {
-	font-size: 14px;
 	padding: 8px 14px;
 	border: 0px;
 	background-color: #30363d;
@@ -46,7 +45,6 @@ label {
 	border-bottom-left-radius: 0px;
 }
 .invalid-input-name {
-	font-size: 14px;
 	padding: 8px 14px;
 	border: 0px;
 	background-color: #30363d;
@@ -72,7 +70,6 @@ label {
 	color: rgb(255, 97, 97);
 }
 textarea {
-	font-size: 14px;
 	padding: 8px 14px;
 	border: 0px;
 	background-color: #30363d;
@@ -90,7 +87,6 @@ textarea:focus {
 	border-bottom-left-radius: 0px;
 }
 select {
-	font-size: 14px;
 	padding: 8px 14px;
 	border: 0px;
 	background-color: #30363d;
@@ -128,13 +124,12 @@ select:hover {
 
 .create-btn {
 	width: 100px;
-	padding: 6px;
+	padding: 6px 0px;
 	border: 0px;
 	border-radius: 20px;
 	background-color: #38c669;
 	color: white;
 	font-weight: 600;
-	font-size: 16px;
 }
 .create-btn:hover {
 	cursor: pointer;
@@ -145,7 +140,7 @@ select:hover {
 	background-color: #30363d;
 	color: #6d6d6d;
 	font-weight: 600;
-	padding: 6px;
+	padding: 6px 0px;
 	border: 0px;
 	border-radius: 20px;
 }

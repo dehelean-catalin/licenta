@@ -5,6 +5,7 @@ import * as Yup from "yup";
 
 import Axios from "axios";
 import "./CreateTeam.css";
+import { FC } from "react";
 
 const generateTeamID = () => {
 	let result = "";
@@ -15,8 +16,10 @@ const generateTeamID = () => {
 	}
 	return result;
 };
-
-const CreateTeam = ({ setIsCreateTeamOpen }) => {
+type Props = {
+	setIsCreateTeamOpen: (open: boolean) => void;
+};
+const CreateTeam: FC<Props> = (props) => {
 	const navigate = useNavigate();
 	const formik = useFormik({
 		initialValues: {
@@ -27,24 +30,45 @@ const CreateTeam = ({ setIsCreateTeamOpen }) => {
 		validationSchema: Yup.object().shape({
 			name: Yup.string().min(3, "Too Short!").max(30, "Too Long!").required("Required"),
 		}),
-		initialErrors: {
-			name: false,
-		},
 		onSubmit: (values) => {
 			const id = generateTeamID();
 			Axios.post("https://licenta-986d3-default-rtdb.europe-west1.firebasedatabase.app/teams.json", {
+				key: "lala",
 				id: id,
-				mentorId: 1234,
-				status: "active",
 				name: formik.values.name,
+				status: "active",
 				privacy: formik.values.privacy,
 				description: formik.values.description,
+				avatar: "",
+				owners: [
+					{
+						id: "123",
+					},
+					{
+						id: "12d",
+					},
+				],
+				members: [
+					{
+						id: "123",
+					},
+					{
+						id: "12d",
+					},
+				],
+				requests: [
+					{
+						id: "123",
+					},
+					{
+						id: "12d3",
+					},
+				],
 			}).then(() => {
 				navigate(`/teams`);
 			});
 		},
 	});
-	console.log(formik);
 
 	return (
 		<form className="create-team-form" onSubmit={formik.handleSubmit}>
@@ -79,19 +103,18 @@ const CreateTeam = ({ setIsCreateTeamOpen }) => {
 				Description
 				<textarea
 					name="description"
-					type="text"
 					placeholder="Add a few words about your team"
 					value={formik.values.description}
 					onChange={formik.handleChange}
-					rows="3"
+					rows={+"3"}
 				/>
 			</label>
 			<div className="btns">
-				<button className="close-btn" onClick={() => setIsCreateTeamOpen(false)}>
+				<button className="close-btn" onClick={() => props.setIsCreateTeamOpen(false)}>
 					Close
 				</button>
 
-				<button className="create-btn" type="submit" disabled={formik.errors.name}>
+				<button className="create-btn" type="submit" disabled={!!formik.errors.name}>
 					Create
 				</button>
 			</div>

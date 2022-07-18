@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import "./TeamsItem.css";
 import { BsThreeDots } from "react-icons/bs";
-import Logo from "../images/logo.png";
 import TeamsItemOptions from "./TeamsItemOptions";
-const TeamsItem = ({ team }) => {
-	const [isOptionOpened, setIsOptionOpened] = useState(false);
-
+import { ITeam } from "../models/models";
+interface Props{
+	team:ITeam
+}
+const TeamsItem = (props:Props) => {
+	const [isOptionOpened, setIsOptionOpened] = useState<boolean>(false);
+    const Logo = require("../images/logo.png")
 	return (
 		<div className="teams-item">
 			<div className="teams-item-dots">
@@ -13,11 +16,11 @@ const TeamsItem = ({ team }) => {
 			</div>
 
 			<img src={Logo} alt="not found" className="join-icon" />
-			<h3>{team.name}</h3>
+			<h3>{props.team.name}</h3>
 			<div>
 				Role: <span>Owner</span>
 			</div>
-			{isOptionOpened && <TeamsItemOptions team={team} setIsOptionOpened={(open) => setIsOptionOpened(open)} />}
+			{isOptionOpened && <TeamsItemOptions team={props.team} setIsOptionOpened={(open:boolean) => setIsOptionOpened(open)} />}
 		</div>
 	);
 };

@@ -8,9 +8,11 @@ import TeamsContext from "../store/teams-context";
 const Teams = () => {
 	const { status, handleStatus } = useContext(TeamsContext);
 	useEffect(() => {
-		handleStatus("active");
+		handleStatus?.("active");
 	}, []);
-
+    const handleClick = ()=>{
+		handleStatus?.("active")
+	}
 	return (
 		<div className="teams">
 			<div className="teams-container">
@@ -23,13 +25,13 @@ const Teams = () => {
 						<ul className="teams-nav">
 							<li
 								className={status === "active" ? "teams-li-active" : "teams-li-inactive"}
-								onClick={() => handleStatus("active")}
+								onClick={handleClick}
 							>
 								Your teams
 							</li>
 							<li
 								className={status === "hidden" ? "teams-li-active" : "teams-li-inactive"}
-								onClick={() => handleStatus("hidden")}
+								onClick={() => handleStatus?.("hidden")}
 							>
 								Hidden teams
 							</li>

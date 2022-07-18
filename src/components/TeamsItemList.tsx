@@ -6,7 +6,7 @@ const TeamsItemList = () => {
 	const { teams } = useContext(TeamsContext);
 	return (
 		<div className="teams-list">
-			{teams.map((team, key) => (
+			{teams && teams.map((team, key) => (
 				<TeamsItem key={key} team={team} />
 			))}
 		</div>
