@@ -11,9 +11,9 @@
 	flex-direction: row;
 	background-color: #0d1117;
 }
-.join-icon {
-	width: 50px;
-	height: 50px;
+.join-avatar {
+	width: 70px;
+	height: 70px;
 	border-radius: 4px;
 	padding: 10px;
 	background-color: white;

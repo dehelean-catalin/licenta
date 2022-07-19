@@ -1,32 +1,33 @@
 .join {
-	background-color: #0d1117;
-	color: white;
-	width: 100%;
+	width: 96%;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
-}
-.join-title {
-	width: 92%;
-	margin: 40px 0px 20px 0px;
-	font-size: 24px;
+	color: white;
+	overflow-y: hidden;
 }
 .join-wrapper {
-	display: flex;
-	width: 92%;
+	font-size: 28px;
+	font-weight: 700;
+	margin: 30px 60px;
+}
+.join-container {
+	display: grid;
+	grid-auto-flow: row;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 30px;
+	margin-left: 60px;
+	margin-right: 60px;
 }
 .create-team {
-	width: 300px;
-	height: 250px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	border-radius: 6px;
-	margin-right: 20px;
 	background-color: #1b2026;
-	font-size: 18px;
+	font-size: 22px;
 	font-weight: 600;
+	padding-top: 50px;
+	border-radius: 6px;
 }
 .create-team:hover {
 	background-color: #30363d;
@@ -38,9 +39,8 @@
 .create-team-description {
 	margin-top: 30px;
 	font-size: 12px;
-	font-weight: 500;
-	height: 30px;
 	color: rgb(152, 152, 152);
+	height: 30px;
 }
 .create-team-btn {
 	height: 30px;
@@ -69,17 +69,14 @@
 	display: flex;
 }
 .join-team {
-	width: 300px;
-	height: 250px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	border-radius: 6px;
-	margin-right: 20px;
 	background-color: #1b2026;
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 600;
+	padding-top: 50px;
+	border-radius: 6px;
 }
 .join-team:hover {
 	background-color: #30363d;

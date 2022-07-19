@@ -1,0 +1,14 @@
+.team {
+	width: 96%;
+	display: flex;
+	color: white;
+}
+.team-wrapper {
+	display: flex;
+	margin: 30px 60px;
+}
+.team-channels {
+	height: 100%;
+	width: 300px;
+	background-color: red;
+}

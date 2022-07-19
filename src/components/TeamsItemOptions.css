@@ -1,14 +1,18 @@
 .teams-item-options {
 	position: absolute;
-	top: 10px;
-	right: -30px;
-	background-color: rgb(37, 37, 37);
+	top: 30px;
+	right: -140px;
+	background-color: #272c34;
 	border-radius: 2px;
-	width: 100px;
+	width: 150px;
+	z-index: 3;
 }
 .options-hidden-btn {
 	width: 100%;
-	text-align: center;
+	color: white;
 	background-color: transparent;
+	font-size: 16px;
+	text-align: center;
 	border: 0;
+	padding: 8px;
 }

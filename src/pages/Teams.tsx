@@ -8,42 +8,38 @@ import TeamsContext from "../store/teams-context";
 const Teams = () => {
 	const { status, handleStatus } = useContext(TeamsContext);
 	useEffect(() => {
-		handleStatus?.("active");
+		status && handleStatus?.(status)!;
 	}, []);
-    const handleClick = ()=>{
-		handleStatus?.("active")
-	}
+
 	return (
 		<div className="teams">
-			<div className="teams-container">
-				<header className="teams-header">
-					<div className="teams-header-title">
-						Teams
-						<IoSettingsOutline />
-					</div>
-					<div className="teams-header-wrapper">
-						<ul className="teams-nav">
-							<li
-								className={status === "active" ? "teams-li-active" : "teams-li-inactive"}
-								onClick={handleClick}
-							>
-								Your teams
-							</li>
-							<li
-								className={status === "hidden" ? "teams-li-active" : "teams-li-inactive"}
-								onClick={() => handleStatus?.("hidden")}
-							>
-								Hidden teams
-							</li>
-						</ul>
+			<div className="teams-wrapper">
+				Teams
+				<div className="teams-container">
+					<ul className="teams-nav">
+						<li
+							className={status === "active" ? "teams-li-active" : "teams-li-inactive"}
+							onClick={() => handleStatus?.("active")}
+						>
+							<h4 className="teams-link">Your teams</h4>
+						</li>
+						<li
+							className={status === "hidden" ? "teams-li-active" : "teams-li-inactive"}
+							onClick={() => handleStatus?.("hidden")}
+						>
+							<h4 className="teams-link">Hidden teams</h4>
+						</li>
+					</ul>
+					<div className="teams-settings">
 						<div className="search-wrapper">
 							<input className="teams-search-bar" type="text" placeholder="Search Teams" />
 							<BiSearch className="search-icon" />
 						</div>
+						<IoSettingsOutline />
 					</div>
-				</header>
-				<TeamsItemList />
+				</div>
 			</div>
+			<TeamsItemList />
 		</div>
 	);
 };

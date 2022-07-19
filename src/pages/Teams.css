@@ -1,35 +1,23 @@
 .teams {
-	display: flex;
-	justify-content: end;
-	width: 100%;
-}
-.teams-container {
-	width: 91%;
+	width: 96%;
 	display: flex;
 	flex-direction: column;
-	padding: 20px;
 }
-.teams-header {
-	width: 100%;
+.teams-wrapper {
+	width: auto;
 	height: auto;
 	display: flex;
 	flex-direction: column;
 	color: white;
-	margin: 20px 0px;
-	font-size: 22px;
+	font-size: 28px;
 	font-weight: 700;
+	margin: 30px 60px;
 	border-bottom: 1px solid #30363d;
-	position: static;
 }
-.teams-header-wrapper {
+.teams-container {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
-}
-.teams-header-title {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 }
 .teams-nav {
 	display: flex;
@@ -42,44 +30,51 @@
 	list-style: none;
 }
 .teams-li-active {
-	font-size: 14px;
-	font-weight: 600;
-	color: #38c669;
-	padding: 8px 4px;
-	border-bottom: 2px solid #38c669;
-	list-style: none;
-	cursor: pointer;
-	margin-right: 6px;
-	transition: 0.3s all;
-}
-/* .teams-li-active:hover {
-	background-color: gray;
-} */
-.teams-li-inactive {
-	font-size: 14px;
-	font-weight: 600;
-	list-style: none;
-	padding: 8px 4px;
-	border-bottom: 2px solid transparent;
-	color: white;
-	cursor: pointer;
-	margin-right: 6px;
-	transition: 0.3s all;
-}
-.search-wrapper {
 	display: flex;
 	align-items: center;
-	margin: 6px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #38c669;
+	border-bottom: 1px solid #38c669;
+	list-style: none;
+}
+
+.teams-li-inactive {
+	font-size: 16px;
+	font-weight: 600;
+	list-style: none;
+	border-bottom: 1px solid transparent;
+	color: white;
+}
+.teams-link {
+	margin: 4px 2px;
+	padding: 4px 8px;
+	border-radius: 4px;
+	transition: 0.3s all;
+}
+.teams-link:hover {
+	cursor: pointer;
+	background-color: #30363d;
+}
+.teams-settings {
+	display: flex;
+	align-items: center;
+	font-size: 26px;
+	margin-bottom: 10px;
+}
+.search-wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
 }
 
 .teams-search-bar {
-	position: relative;
 	height: 20px;
-	width: 200px;
+	width: 250px;
 	background-color: #161b22;
 	color: white;
-	font-size: 12px;
-	padding: 4px 8px;
+	font-size: 16px;
+	padding: 8px 14px;
 	margin-right: 10px;
 	border: 0;
 	border-radius: 4px;
@@ -87,11 +82,11 @@
 	transition: 0.4s all;
 }
 .teams-search-bar:focus {
-	width: 250px;
+	width: 300px;
 	background-color: gray;
 }
 .search-icon {
 	position: absolute;
-	right: 42px;
+	right: 20px;
 	font-size: 18px;
 }

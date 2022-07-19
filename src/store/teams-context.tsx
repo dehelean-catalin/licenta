@@ -10,6 +10,7 @@ interface ITeamsContext {
 	handleStatus?: (status: string) => void;
 	teams: ITeam[];
 	changeStatus: (team: ITeam) => void;
+	getTeams: () => void;
 }
 const TeamsContext = createContext<Partial<ITeamsContext>>({});
 
@@ -38,6 +39,7 @@ export const TeamsContextProvider: FC<Props> = ({ children }) => {
 			setStatus(status);
 		});
 	};
+
 	useEffect(() => {
 		handleStatus("active");
 	}, []);
